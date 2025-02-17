@@ -4,20 +4,28 @@ class CustomButtons {
   static Widget submitButton({
     required String label,
     required VoidCallback onPressed,
+    int width = 350,
+    int height = 50,
   }) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blueAccent,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      ),
-      child: Text(
-        label,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w500,
+    return SizedBox(
+      width: width.toDouble(),
+      height: height.toDouble(),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blueAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        child: Text(
+          label,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );

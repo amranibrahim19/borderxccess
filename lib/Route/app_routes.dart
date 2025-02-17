@@ -4,4 +4,5 @@ part of 'app_pages.dart';
 
 abstract class AppRoutes {
   static const WELCOME = '/';
+  static const LOGIN = '/login';
 }

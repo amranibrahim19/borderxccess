@@ -11,12 +11,18 @@ class CustomBottomSheets {
   }) {
     showModalBottomSheet<void>(
       context: context,
-
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        return SizedBox(
-          height: 200,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+        return Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            height: 300,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
             child: Column(
               children: [
                 Row(
@@ -75,13 +81,13 @@ class CustomBottomSheets {
     );
   }
 
-  static void showWarningBottomSheet(BuildContext context, String message) {
+  static void showInfoBottomSheet(BuildContext context, String message) {
     showBottomSheet(
       context: context,
-      title: "Warning",
+      title: "Info",
       message: message,
       icon: HugeIcons.strokeRoundedAlert02,
-      color: Colors.orange,
+      color: Colors.lightBlue,
     );
   }
 }
